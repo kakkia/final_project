@@ -5,7 +5,7 @@ st.title("Talking Hands")
 st.header("The first Italian Gestures Classification app")
 
 from PIL import Image
-image = Image.open('https://github.com/kakkia/final_project/blob/main/img_streamlit/gestures.jpg')
+image = Image.open('img_streamlit/gestures.jpg')
 
 st.image(image, use_column_width=True)
 
