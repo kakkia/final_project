@@ -15,8 +15,8 @@ def main():
     st.image(image, use_column_width=True)
 
     st.write("""
-When speaking Italian it is mandatory that you express your emotions with your hands. My app will help you to use the appropriate gesture when you just can't find the words.\n
-So far I have been training a neural network model to predict only three key expressions and you can find out their meaning after uploading your picture.""")
+When speaking Italian it is mandatory that you express your emotions with your hands. My app will help you to use the appropriate gesture when you just can't find the words.
+""")
     
     load_image()
 
