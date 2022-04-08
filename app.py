@@ -1,8 +1,12 @@
 import streamlit as st
 import tensorflow as tf
 
-import pickle 
-model = pickle.load(open('/content/my_model2.hdf5'))
+@st.cache(allow_output_mutation=True)
+def load_model():
+  model=tf.keras.models.load_model('/content/my_model2.hdf5')
+  return model
+with st.spinner('Model is being loaded..'):
+  model=load_model()
 
 def main():
     st.title("Talking Hands")
