@@ -1,4 +1,4 @@
-pip install --upgrade pip --user
+'/home/appuser/venv/bin/python -m pip install --upgrade pip'
 
 import streamlit as st
 import tensorflow as tf
