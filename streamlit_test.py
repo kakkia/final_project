@@ -4,7 +4,7 @@ import streamlit as st
 
 def load_image():
 
-    uploaded_file = st.file_uploader(label='Give us a hand and upload your picture')
+    uploaded_file = st.file_uploader(label='Give us a hand to predict your gesture')
 
     if uploaded_file is not None:
 
