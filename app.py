@@ -1,6 +1,7 @@
 import streamlit as st
+pip install tensorflow
+
 import tensorflow as tf
-pip install --upgrade pip
 
 @st.cache(allow_output_mutation=True)
 def load_model():
