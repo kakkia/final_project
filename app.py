@@ -7,7 +7,6 @@ def load_model():
   model = load_model('/content/my_model2.hdf5')
   model._make_predict_function()
   model.summary()
-is reloaded 
   return model
 
 def main():
