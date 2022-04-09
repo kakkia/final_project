@@ -1,5 +1,4 @@
 import streamlit as st
-import tensorflow as tf
 import tensorflow.keras.backend as K
 
 @st.cache(allow_output_mutation=True)
