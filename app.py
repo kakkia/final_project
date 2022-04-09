@@ -1,12 +1,14 @@
 import streamlit as st
 import tensorflow as tf
+import tensorflow.keras.backend as K
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-  model=tf.keras.models.load_model('/content/my_model2.hdf5')
+  model = load_model('/content/my_model2.hdf5')
+  model._make_predict_function()
+  model.summary()
+is reloaded 
   return model
-with st.spinner('Model is being loaded..'):
-  model=load_model()
 
 def main():
     st.title("Talking Hands")
@@ -20,24 +22,25 @@ def main():
 When speaking Italian it is mandatory that you express your emotions with your hands. My app will help you to use the appropriate gesture when you just can't find the words.
 """)
     
-    load_image()
-
 if __name__ == '__main__':
     main()
+    uploaded_file = st.file_uploader(label='Give us a hand and upload your picture')
+    #sentence = st.text_input('Input your sentence here:')
+    model= load_model()
+    if uploaded_file:
+        y_hat = model.predict(uploaded_file)
 
 #if st.button('Predict your gesture'):
 #     st.write('Not just yet. I will upload my model later')
-
-uploaded_file = st.file_uploader(label='Give us a hand and upload your picture')
 
 import cv2
 from PIL import Image, ImageOps
 import numpy as np
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-def import_and_predict(image_data, model):
+def import_and_predict(uploaded_file, model):
   size = (180,180)    
-  image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+  image = ImageOps.fit(uploaded_file, size, Image.ANTIALIAS)
   image = np.asarray(image)
   img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
   #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.   
