@@ -4,7 +4,7 @@ import tensorflow.keras.backend as K
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-  model = load_model('/content/my_model2.hdf5')
+  model = load_model('https://drive.google.com/file/d/1w-dni_INNcLBhjuJkm-4HxLMjlgfS-XI/view?usp=sharing')
   model._make_predict_function()
   model.summary()
   return model
