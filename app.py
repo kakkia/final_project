@@ -47,7 +47,7 @@ def predict_class(image):
 
 def hand_description(output):
     
-    if output == 0:
+    if output == "what":
         text = st.markdown("""<h4>What?</h4>
         <ul>
         <li>The tips of the fingers of one hand are brought sharply together to form an upward-pointing cone.</li>
@@ -55,8 +55,8 @@ def hand_description(output):
         <li>How fast you move it, depends on the degree of impatience expressed.</li>
         <li>Don't be afraid of using it when someone tells you something unexpectedly upsetting.</li>
         </ul>""", True)
-    elif output == 1:
-        text = st.markdown("""<h4>Contempt</h4>
+    elif output == "shoo":
+        text = st.markdown("""<h4>Shoo</h4>
         <ul>
         <li>The flat hand slowly moves as to follow the people you are addressing.</li>
         <li></li>
@@ -81,7 +81,7 @@ else:
 
 if predict_hand:   
     result, output = predict_class(image)
-    st.subheader(result)
+   # st.subheader(result)
     st.text = hand_description(output)
 else:
     st.write('')
