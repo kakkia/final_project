@@ -32,7 +32,6 @@ predict_hand = st.button('Predict your gesture')
 ############################################### -- so far so good!
           
 class_names = ["what", "shoo", "perfect"] 
-all_pred = ["0.3", "0.3", "0.3"]
 
 def predict_class(image):
     classify_model = tf.keras.models.load_model('Desktop/WBS_bootcamp/final_project/my_model/my_new_model.hdf5')
@@ -44,7 +43,7 @@ def predict_class(image):
     winner = np.argmax(prediction)
     all_preds = prediction[0]
     predicted_class = f"Your hand is predicted as {class_names[winner]}"
-    return predicted_class, all_pred, winner
+    return predicted_class, winner
 
 def hand_description(winner):
     
