@@ -41,7 +41,6 @@ def predict_class(image):
     test_image /= 255.
     prediction = classify_model.predict(test_image)
     output = np.argmax(prediction)
-    all_preds = prediction[0]
     predicted_class = f"Your hand is predicted as {class_names[output]}"
     return predicted_class, output
 
