@@ -29,7 +29,6 @@ if __name__ == '__main__':
 uploaded_file = st.file_uploader(label='Give us a hand and upload your picture', type=None)
 predict_hand = st.button('Predict your gesture')
 
-############################################### -- so far so good!
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
