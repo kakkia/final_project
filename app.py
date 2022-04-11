@@ -40,14 +40,14 @@ def predict_class(image):
     test_image = np.expand_dims(test_image, axis=0)
     test_image /= 255.
     prediction = classify_model.predict(test_image)
-    winner = np.argmax(prediction)
+    output = np.argmax(prediction)
     all_preds = prediction[0]
-    predicted_class = f"Your hand is predicted as {class_names[winner]}"
-    return predicted_class, winner
+    predicted_class = f"Your hand is predicted as {class_names[output]}"
+    return predicted_class, output
 
-def hand_description(winner):
+def hand_description(output):
     
-    if winner == 0:
+    if output == 0:
         text = st.markdown("""<h4>What?</h4>
         <ul>
         <li>The tips of the fingers of one hand are brought sharply together to form an upward-pointing cone.</li>
@@ -55,7 +55,7 @@ def hand_description(winner):
         <li>How fast you move it, depends on the degree of impatience expressed.</li>
         <li>Don't be afraid of using it when someone tells you something unexpectedly upsetting.</li>
         </ul>""", True)
-    elif winner == 1:
+    elif output == 1:
         text = st.markdown("""<h4>Contempt</h4>
         <ul>
         <li>The flat hand slowly moves as to follow the people you are addressing.</li>
@@ -80,8 +80,8 @@ else:
     st.warning('After uploading your picture click: Predict your gesture')
 
 if predict_hand:   
-    result, all_preds, winner = predict_class(image)
+    result, output = predict_class(image)
     st.subheader(result)
-    st.text = hand_description(winner)
+    st.text = hand_description(output)
 else:
     st.write('')
