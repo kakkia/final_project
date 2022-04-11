@@ -5,11 +5,11 @@ from PIL import Image, ImageOps
 import numpy as np
 import matplotlib.pyplot as plt
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    model = tf.keras.models.load_model('Desktop/WBS_bootcamp/final_project/my_model/my_new_model.hdf5')
-    model.summary()
-    return model
+#@st.cache(allow_output_mutation=True)
+#def load_model():
+#    model = tf.keras.models.load_model('Desktop/WBS_bootcamp/final_project/my_model/my_new_model.hdf5')
+#    model.summary()
+#    return model
 
 def main():
     st.title("Talking Hands")
@@ -50,6 +50,7 @@ def predict_class(image):
     predicted_class = f"Your hand is predicted as {class_names[output]}"
     return predicted_class, output
 
+
 def hand_description(output):
     
     if output == "what":
@@ -72,10 +73,8 @@ def hand_description(output):
 
 
 if predict_hand:   
-    result, output = predict_class(image)
+    output = predict_class(image)
    # st.subheader(result)
     st.text = hand_description(output)
 else:
     st.write('')
-    
- 
