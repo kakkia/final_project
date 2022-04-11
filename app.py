@@ -30,7 +30,13 @@ uploaded_file = st.file_uploader(label='Give us a hand and upload your picture',
 predict_hand = st.button('Predict your gesture')
 
 ############################################### -- so far so good!
-          
+
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Your hand', width=None)
+else:
+    st.warning('After uploading your picture click: Predict your gesture')
+    
 class_names = ["what", "shoo", "perfect"] 
 
 def predict_class(image):
@@ -64,11 +70,6 @@ def hand_description(output):
         <li>And it's not just for food.</li>""",True)
     return text
 
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    st.image(image, caption='Your hand', width=None)
-else:
-    st.warning('After uploading your picture click: Predict your gesture')
 
 if predict_hand:   
     result, output = predict_class(image)
@@ -76,3 +77,5 @@ if predict_hand:
     st.text = hand_description(output)
 else:
     st.write('')
+    
+ 
