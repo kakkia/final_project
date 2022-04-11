@@ -49,28 +49,20 @@ def hand_description(output):
     
     if output == "what":
         text = st.markdown("""<h4>What?</h4>
-        <ul>
         <li>The tips of the fingers of one hand are brought sharply together to form an upward-pointing cone.</li>
         <li>The hand can either be held motionless or be shaken more or less violently up and down.</li>
         <li>How fast you move it, depends on the degree of impatience expressed.</li>
-        <li>Don't be afraid of using it when someone tells you something unexpectedly upsetting.</li>
-        </ul>""", True)
+        <li>Don't be afraid of using it when someone tells you something unexpectedly upsetting.</li>""", True)
     elif output == "shoo":
         text = st.markdown("""<h4>Shoo</h4>
-        <ul>
         <li>The flat hand slowly moves as to follow the people you are addressing.</li>
-        <li></li>
-        <li>In parenting, it can be moved up and down to suggest you will be punished for what you did.</li>
-        <li></li>
-        </ul>""",True)
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>""",True)
     else:
         text = st.markdown("""<h4>Excellent</h4>
-        <ul>
         <li>This gesture express both approval and hearty satifaction.</li>
         <li>It is typical of the good-natured and contented gourmet.</li>
         <li>Use it anythime you find something delicious, or you completely agree with someone.</li>
-        <li>And it's not just for food.</li>
-        </ul>""",True)
+        <li>And it's not just for food.</li>""",True)
     return text
 
 if uploaded_file is not None:
