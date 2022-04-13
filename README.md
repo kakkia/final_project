@@ -1,4 +1,4 @@
-# Talking Hands
+# Final Project 
 
-This is the repository for my final project for the Data Science bootcamp at WBS Coding School. 
-Details to follow.
+This is a repository collecting some of the notebooks I used to prepare for my Data Science final project at WBS Coding School. 
+
